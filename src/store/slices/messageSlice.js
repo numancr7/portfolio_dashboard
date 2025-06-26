@@ -57,7 +57,7 @@ export const getAllMessages = () => async (dispatch) => {
   dispatch(messageSlice.actions.getAllMessagesRequest());
   try {
     const response = await axios.get(
-      "http://localhost:3000/api/v1/message/getall",
+      "https://portfolio-backend-rho-three.vercel.app/api/v1/message/getall",
       { withCredentials: true }
     );
     console.log('Backend response for messages:', response.data);
@@ -76,7 +76,7 @@ export const deleteMessage = (id) => async (dispatch) => {
   dispatch(messageSlice.actions.deleteMessageRequest());
   try {
     const {data} = await axios.delete(
-      `http://localhost:3000/api/v1/message/delete/${id}`,
+      `https://portfolio-backend-rho-three.vercel.app/api/v1/message/delete/${id}`,
       {
         withCredentials: true,
       }
