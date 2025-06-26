@@ -19,6 +19,7 @@ import { getAllMessages } from "./store/slices/messageSlice";
 import ManageTimeline from "./pages/ManageTimeline";
 import { getAllProjects } from "./store/slices/projectSlice";
 import ViewProject from "./pages/ViewProject";
+import Messages from "./pages/sub-components/Messages";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function App() {
         <Route path="/manage/projects" element={<ManageProjects />} />
         <Route path="/view/project/:id" element={<ViewProject />} />
         <Route path="/update/project/:id" element={<UpdateProject />} />
+        <Route path="/messages" element={<Messages />} />
       </Routes>
       <ToastContainer position="bottom-right" theme="dark" />
     </Router>

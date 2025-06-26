@@ -123,7 +123,9 @@ const Dashboard = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button>Visit Portfolio</Button>
+                  <a href="https://portfolio-frontend-three-rho.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <Button>Visit Portfolio</Button>
+                  </a>
                 </CardFooter>
               </Card>
               <Card className="flex flex-col justify-center">

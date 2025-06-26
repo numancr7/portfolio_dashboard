@@ -23,6 +23,7 @@ const forgotResetPassSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
       state.message = null;
+      
     },
    resetPasswordRequest(state, action) {
       state.loading = true;
@@ -50,7 +51,7 @@ export const forgotPassword = (email) => async (dispatch) => {
     dispatch(forgotResetPassSlice.actions.forgotPasswordRequest());
     console.log(email);
     const response = await axios.post(
-      "https://portfolio-backend-rho-three.vercel.app/api/v1/user/password/forgot",
+      "http://localhost:3000/api/v1/user/password/forgot",
       { email },
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
     );
@@ -73,7 +74,7 @@ export const resetPassword =
     try {
       dispatch(forgotResetPassSlice.actions.resetPasswordRequest());
       const response = await axios.put(
-        `https://portfolio-backend-rho-three.vercel.app/api/v1/user/password/reset/${token}`,
+        `http://localhost:3000/api/v1/user/password/reset/${token}`,
         { password, confirmPassword },
         {
           withCredentials: true,

@@ -30,13 +30,22 @@ const Profile = () => {
                 </div>
                 <div className="grid gap-2 w-full sm:w-72">
                   <Label>Resume</Label>
-                  <Link to={user && user.resume && user.resume.url} target="_blank">
-                    <img
-                      src={user && user.resume && user.resume.url}
-                      alt="avatar"
-                      className="w-full  h-auto sm:w-72 sm:h-72 rounded-2xl"
-                    />
-                  </Link>
+                  {user && user.resume && user.resume.url ? (
+                    <a
+                      href={
+                        user.resume.url +
+                        (user.resume.url.includes('?') ? '&' : '?') +
+                        'fl_attachment:resume.pdf'
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                    >
+                      Download/View Resume (PDF)
+                    </a>
+                  ) : (
+                    <span>No resume uploaded.</span>
+                  )}
                 </div>
               </div>
               <div className="grid gap-2">

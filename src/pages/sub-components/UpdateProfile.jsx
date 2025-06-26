@@ -144,6 +144,7 @@ const UpdateProfile = () => {
                   <div className="relative">
                     <input
                       type="file"
+                      accept="application/pdf"
                       onChange={resumeHandler}
                       className="avatar-update-btn"
                     />

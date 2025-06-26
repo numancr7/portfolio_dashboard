@@ -38,6 +38,10 @@ const Messages = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getAllMessages());
+  }, [dispatch]);
+
+  useEffect(() => {
     if (error) {
       toast.error(error);
       dispatch(clearAllMessageErrors());

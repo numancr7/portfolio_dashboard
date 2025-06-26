@@ -154,6 +154,7 @@ const HomePage = () => {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
+                  to="/messages"
                   className={`flex h-9 w-9 items-center justify-center rounded-lg ${
                     active === "Messages"
                       ? "text-accent-foreground bg-accent"
